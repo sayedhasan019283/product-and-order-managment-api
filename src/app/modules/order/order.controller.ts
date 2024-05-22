@@ -5,13 +5,26 @@ const createNewOrder = async (req:Request, res: Response) =>{
     const data = req.body;
     try {
         const result = await orderService.createNewOrderToDB(data);
+        if (result === "Product not found") {
+            return res.status(500).json({
+                success: false,
+                message: "Product not found by given id"
+            });
+        }
+
         if (result === "insufficient stock!") {
             return res.status(500).json({
                 success: false,
                 message: "Insufficient quantity available in inventory"
             });
         }
-        return res.status(201).json({
+        if (result === "price didn't match") {
+            return res.status(500).json({
+                success: false,
+                message: "JSON provided price didn't match"
+            });
+        }
+        res.status(201).json({
             success: true,
             message: "order created successfully!",
             data: result,

@@ -26,7 +26,7 @@ const createNewOrderToDB = async (order: Order) => {
         
         // Validate price
         if (price !== product.price) {
-            throw new Error('Price mismatch');
+            return "price didn't match"
         }
 
         // Create order object
@@ -43,7 +43,8 @@ const createNewOrderToDB = async (order: Order) => {
         // console.log("order", quantity, "product", product.inventory.quantity, "stock" ,product.inventory.inStock )
         return result;
     } catch (error) {
-        console.error('Error creating order:', error);
+        console.error('Error creating order:', error.message);
+        return "Product not found"
     }
 };
 
