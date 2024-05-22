@@ -17,7 +17,7 @@ const createNewOrderToDB = async (order: Order) => {
             product.inventory.inStock = false; 
             return "insufficient stock!"
         } 
-
+        // if product quantity is bigger or equal to order quantity then order quantity minus from product quantity  
         if (product.inventory.quantity >= quantity) {
             product.inventory.quantity -= quantity;
         } else {
