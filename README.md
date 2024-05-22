@@ -1,5 +1,5 @@
 # product-and-order-management-api
- for run server npm run start:dev
+#  for run this project locally run this command: npm run start:dev
 
  vercel host link: https://ecommerce-backend-node-bay.vercel.app/
 
