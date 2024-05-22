@@ -12,9 +12,9 @@ const createNewOrderToDB = async (order: Order) => {
             throw new Error('Product not found');
         }
         console.log("order", quantity, "product", product.inventory.quantity, "stock" ,product.inventory.inStock)
+        // if quantity 0 make inStock false 
         if (product.inventory.quantity === 0) {
             product.inventory.inStock = false; 
-        } else {
             return "insufficient stock!"
         } 
 
@@ -36,15 +36,14 @@ const createNewOrderToDB = async (order: Order) => {
             price,
             quantity,
         };
-
+        // save product with update quantity 
         await product.save();
         // Save order to database
         const result = await OrderModel.create(orderObject);
-        console.log("order", quantity, "product", product.inventory.quantity, "stock" ,product.inventory.inStock )
+        // console.log("order", quantity, "product", product.inventory.quantity, "stock" ,product.inventory.inStock )
         return result;
     } catch (error) {
         console.error('Error creating order:', error);
-        throw error; // Propagate error to be handled by the calling function
     }
 };
 

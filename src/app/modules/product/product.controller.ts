@@ -29,6 +29,12 @@ const getAllProduct = async (req:Request, res : Response) => {
         const {searchTerm} = req.query;
         const result = await productService.retrieveAllProductFromDB(searchTerm);
         // Modify the result data to move the 'inventory' object to the end of each product entry
+        if (result.length === 0) {
+            return res.status(500).json({
+                success: false,
+                message: "No result found!",
+              });
+        }
         const modifiedResult = result.map(product => {
             return {
                 id:product._id,
@@ -125,12 +131,12 @@ const UpdateProductInformation = async (req:Request, res : Response) => {
 const deleteProduct = async (req : Request, res : Response) => {
     try {
         const {productId} = req.params;
-        const result = await productService.deleteProductFromDB(productId);
+         await productService.deleteProductFromDB(productId);
 
         res.status(200).json({
             success: true,
             message: "Product deleted successfully!",
-            data: result,
+            data: null,
           });
 
     } catch (error) {

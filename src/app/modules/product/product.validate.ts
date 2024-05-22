@@ -3,7 +3,7 @@ import Joi from 'joi';
 const productValidateSchema = Joi.object({
   name: Joi.string().required(),
   description: Joi.string().required(),
-  price: Joi.number().required(),
+  price: Joi.number().integer().required(),
   category: Joi.string().required(),
   tags: Joi.array().items(Joi.string()).required(),
   variants: Joi.array().items(
