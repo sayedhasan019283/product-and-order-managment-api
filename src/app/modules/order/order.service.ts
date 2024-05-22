@@ -11,7 +11,6 @@ const createNewOrderToDB = async (order: Order) => {
         if (!product) {
             throw new Error('Product not found');
         }
-        console.log("order", quantity, "product", product.inventory.quantity, "stock" ,product.inventory.inStock)
         // if quantity 0 make inStock false 
         if (product.inventory.quantity === 0) {
             product.inventory.inStock = false; 

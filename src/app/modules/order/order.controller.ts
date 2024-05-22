@@ -42,6 +42,13 @@ const createNewOrder = async (req:Request, res: Response) =>{
 const retrieveAllOrder = async (req:Request, res: Response) => {
     try {
         const {email} = req.query;
+
+        if (typeof email !== 'string' && typeof email !== 'undefined') {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid search term provided!",
+            });
+        }
         const result = await orderService.retrieveAllOrderFromDB(email);
 
         if (result.length === 0) {

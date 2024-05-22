@@ -27,6 +27,13 @@ const createProduct = async (req:Request, res : Response) =>{
 const getAllProduct = async (req:Request, res : Response) => {
     try {
         const {searchTerm} = req.query;
+        
+        if (typeof searchTerm !== 'string' && typeof searchTerm !== 'undefined') {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid search term provided!",
+            });
+        }
         const result = await productService.retrieveAllProductFromDB(searchTerm);
         // Modify the result data to move the inventory object to the end of each product entry
         if (result.length === 0) {
