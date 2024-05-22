@@ -8,10 +8,14 @@
 # product Management api
 
 Create a New Product
+
+
 Endpoint: /api/products
 
 
 this endpoint also implement in this api
+
+
 /api/products?searchTerm=iphone
 
 
