@@ -42,7 +42,7 @@ const createNewOrderToDB = async (order: Order) => {
         // console.log("order", quantity, "product", product.inventory.quantity, "stock" ,product.inventory.inStock )
         return result;
     } catch (error) {
-        console.error('Error creating order:', error.message);
+        console.error('Error creating order:', error);
         return "Product not found"
     }
 };
