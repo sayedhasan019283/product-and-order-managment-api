@@ -7,7 +7,7 @@
 
 # product Management api
 
-Create a New Product
+# Create a New Product
 
 Endpoint: /api/products
 
@@ -18,14 +18,14 @@ this endpoint also implement in this api
 Method: POST
 
 
-Retrieve a List of All Products
+# Retrieve a List of All Products
 
 Endpoint: /api/products
 
 Method: GET
 
 
-Retrieve a Specific Product by ID
+# Retrieve a Specific Product by ID
 
 Endpoint: /api/products/:productId
 
@@ -39,8 +39,14 @@ Endpoint: /api/products/:productId
 Method: PUT
 
 
+# Update Product Information
 
-Delete a Product
+Endpoint: /api/products/:productId
+
+Method: PUT
+
+
+# Delete a Product
 
 Endpoint: /api/products/:productId
 
@@ -50,14 +56,14 @@ Method: DELETE
 # Order Management api
 
 
-Create a New Order
+# Create a New Order
 
 Endpoint: /api/orders
 
 Method: POST
 
 
-Retrieve All Orders
+# Retrieve All Orders
 
 Endpoint: /api/orders
 
