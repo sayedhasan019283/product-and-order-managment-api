@@ -62,6 +62,8 @@ Sample Request Body:
         "inStock": true
     }
 }
+
+
 Sample Response:
 
 {
@@ -89,6 +91,8 @@ Sample Response:
         }
     }
 }
+
+
 2. Retrieve a List of All Products
 Endpoint: /api/products
 
@@ -145,6 +149,8 @@ Sample Response:
         // Additional products can be added here...
     ]
 }
+
+
 3. Retrieve a Specific Product by ID
 Endpoint: /api/products/:productId
 
@@ -177,6 +183,8 @@ Sample Response:
         }
     }
 }
+
+
 4. Update Product Information
 Endpoint: /api/products/:productId
 
@@ -205,8 +213,9 @@ Sample Request Body:
         "inStock": true
     }
 }
-Sample Response:
 
+
+Sample Response:
 {
     "success": true,
     "message": "Product updated successfully!",
@@ -232,6 +241,8 @@ Sample Response:
         }
     }
 }
+
+
 5. Delete a Product
 Endpoint: /api/products/:productId
 
@@ -246,6 +257,9 @@ Sample Response:
  }
  
 // The product should be deleted from the database.
+
+
+
 6. Search a product
 Endpoint: /api/products?searchTerm=iphone
 Method: GET
@@ -298,8 +312,11 @@ Sample Response:
         }
     ]
 }
+
 Order Management
 Order Management API Endpoints
+
+
 1.Create a New Order
 Endpoint: /api/orders
 
@@ -313,8 +330,9 @@ Request Body:
     "price": 999,
     "quantity": 1
 }
-Response:
 
+
+Response:
 {
     "success": true,
     "message": "Order created successfully!",
@@ -325,6 +343,8 @@ Response:
         "quantity": 1
     }
 }
+
+
 2.Retrieve All Orders
 Endpoint: /api/orders
 
@@ -345,6 +365,8 @@ Sample Response:
         // more orders...
     ]
 }
+
+
 3. Retrieve Orders by User Email
 Endpoint: /api/orders?email=level2@programming-hero.com
 
@@ -378,6 +400,8 @@ If the inventory quantity reaches zero, set inStock to false.
 Otherwise, keep inStock as true.
 Error Handling:
 Sample Error Responses
+
+
 Insufficient Quantity Error
 {
     "success": false,
