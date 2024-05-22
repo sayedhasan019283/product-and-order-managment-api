@@ -28,7 +28,7 @@ const getAllProduct = async (req:Request, res : Response) => {
     try {
         const {searchTerm} = req.query;
         const result = await productService.retrieveAllProductFromDB(searchTerm);
-        // Modify the result data to move the 'inventory' object to the end of each product entry
+        // Modify the result data to move the inventory object to the end of each product entry
         if (result.length === 0) {
             return res.status(500).json({
                 success: false,
@@ -99,7 +99,7 @@ const UpdateProductInformation = async (req:Request, res : Response) => {
         const updateData = req.body;
         const { value} = productValidateSchema.validate(updateData);
         const result = await productService.UpdateProductInformationIntoDB(productId , value)
-
+        //  data format
         const modifiedResult = {
             id:result!._id,
             name: result!.name,

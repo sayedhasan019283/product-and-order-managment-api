@@ -10,7 +10,6 @@ const retrieveAllProductFromDB =async (searchTerm : string | undefined) =>{
     let products;
 
     if (searchTerm) {
-        
       // Search for products matching the searchTerm
       products = await ProductModel.find({ name: new RegExp(searchTerm, 'i') }); 
       // Case-insensitive search
