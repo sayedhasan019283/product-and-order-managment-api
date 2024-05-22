@@ -5,40 +5,72 @@
 
 #Api endpoints
 
-#product Management api
+# product Management api
 
 Create a New Product
 Endpoint: /api/products
+
+
 this endpoint also implement in this api
 /api/products?searchTerm=iphone
+
+
 Method: POST
 
 Retrieve a List of All Products
+
+
 Endpoint: /api/products
+
+
 Method: GET
 
 Retrieve a Specific Product by ID
+
+
 Endpoint: /api/products/:productId
+
+
 Method: GET
 
 Update Product Information
+
+
 Endpoint: /api/products/:productId
+
+
 Method: PUT
 
 Delete a Product
+
+
 Endpoint: /api/products/:productId
+
+
 Method: DELETE
 
-#Order Management api
+# Order Management api
 
 Create a New Order
+
+
 Endpoint: /api/orders
+
+
 Method: POST
 
 Retrieve All Orders
+
+
 Endpoint: /api/orders
+
+
 this endpoint also handel in this api
+
+
 /api/orders?email=sayed@gmail.com
+
+
 Method: GET
 
 # this project is create by flowing this requirement
@@ -70,7 +102,7 @@ An object representing the product's inventory details.
 quantity (number): The available quantity of the product in stock.
 inStock (boolean): Indicates whether the product is currently in stock.
 
-#Product Management
+# Product Management
 1. Create a New Product
 Endpoint: /api/products
 
